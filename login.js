@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js'
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider   } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js'
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged  } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js'
 
 
 const firebaseConfig = {
@@ -16,6 +16,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+
+const laoder = document.getElementById("loader");
+laoder.style.display = "none"; 
 
 
 const Login = (event) => 
@@ -53,7 +56,25 @@ const loginFromGoogle = (event) =>
     event.preventDefault();
 }
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    alert("You are already login");
+    window.location.href = "index.html";
+  } else {
+    console.log("User is not login");
+  }
+});
 
+const MoveToRegsiter = () =>
+{
+  mainDisplay.style.display = "none";
+  laoder.style.display = "flex";
+  setTimeout(() =>
+  {
+    window.location.href = "register.html";
+  }, 1000)
+}
 
 
 const loginBtn = document.getElementById("loginButton");
@@ -62,6 +83,10 @@ loginBtn.addEventListener("click", Login);
 const googleBtn = document.getElementById("googleButton");
 googleBtn.addEventListener("click", loginFromGoogle);
 
+const registerButton = document.getElementById("registerButton");
+const mainDisplay = document.getElementById("main"); 
+
+registerButton.addEventListener("click", MoveToRegsiter);
 
 
 

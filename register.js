@@ -41,5 +41,25 @@ const register = (event) =>
     event.preventDefault();
 }
 
+const MoveToRegsiter = () =>
+{
+  mainDisplay.style.display = "none";
+  loader.style.display = "flex";
+  setTimeout(() =>
+  {
+    window.location.href = "login.html";
+  }, 1000)
+}
+
+
+
 let regsiterBtn = document.getElementById("registerButton");
 regsiterBtn.addEventListener("click", register);
+
+const loader = document.getElementById("loader");
+loader.style.display = "none"; 
+
+const loginButton = document.getElementById("loginButton");
+const mainDisplay = document.getElementById("main"); 
+
+loginButton.addEventListener("click", MoveToRegsiter);
