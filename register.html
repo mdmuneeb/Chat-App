@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./register.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+
+
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="text-center lg:text-left">
+          </div>
+          <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <form class="card-body">
+              <div class="form-control">
+                <h1 class="flex justify-center text-4xl font-bold">Register</h1>
+                <div class="divider divider-accent"></div>
+                <label class="label">
+                  <span class="label-text">Email</span>
+                </label>
+                <input type="email" placeholder="email" id="email" class="input input-bordered input-accent" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Password</span>
+                </label>
+                <input type="password" placeholder="password" id="password" class="input input-bordered input-accent" required />
+              </div>
+              <label class="label">
+                <a href="login.html" class="label-text-alt link link-hover link-accent">Login?</a>
+              </label>
+              <div class="form-control mt-1">
+                <button class="btn bg-accent" id="registerButton">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    
+    <script src="./register.js" type="module"></script>
+</body>
+</html>
